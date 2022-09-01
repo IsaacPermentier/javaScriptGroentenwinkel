@@ -6,20 +6,45 @@
   <title>Groentenwinkel</title>
   <link rel="icon" href="groentenwinkel.ico" type="image/x-icon">
   <link rel="stylesheet" href="groentenwinkel.css" />
+  <script src="groentenwinkel.js" defer></script>
 </head>
 
 <body>
+  <div id="bestandenFout" hidden class="fout">Sorry, we konden de bestanden niet laden.</div>
   <img src="banner.jpg" id="banner" alt="banner">
   <h1>Bestelling</h1>
-  <label>Groente:
-    <select id="groente">
+  <label>Groente: <span id="groenteFout" hidden class="fout">Gelieve een groente te selecteren</span>
+    <select id="groente" required>
       <option value="">--- maak uw keuze ---</option>
     </select>
   </label>
-  <label>Aantal:
-    <input id="aantal">
+  <label>Aantal: <span id="aantalFout" hidden class="fout">Minimum 1</span>
+    <input id="aantal" required min="1">
   </label>
   <button id="toevoegen">Toevoegen aan mandje</button>
+  <table id="tabel">
+    <thead>
+      <tr>
+        <th>Groente</th>
+        <th>Aantal</th>
+        <th>Prijs</th>
+        <th id="teBetalen">TeBetalen</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="tabelBody">
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Totaal</th>
+        <td></td>
+        <td></td>
+        <td id="totaalTeBetalen"></td>
+      </tr>
+    </tfoot>
+
+  </table>
 </body>
 
 </html>
